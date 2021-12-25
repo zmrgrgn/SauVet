@@ -1,6 +1,5 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
-using DataAccess.Concrete.InMemory;
 using System;
 
 namespace ConsoleUI
@@ -8,6 +7,11 @@ namespace ConsoleUI
     class Program
     {
         static void Main(string[] args)
+        {
+            HayvanKayitTest();
+        }
+
+        private static void HayvanKayitTest()
         {
             HayvanKayitManager hayvanKayitManager = new HayvanKayitManager(new EfHayvanKayitDal());
             foreach (var hayvanKayit in hayvanKayitManager.GetAll())
