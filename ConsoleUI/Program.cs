@@ -14,10 +14,19 @@ namespace ConsoleUI
         private static void HayvanKayitTest()
         {
             HayvanKayitManager hayvanKayitManager = new HayvanKayitManager(new EfHayvanKayitDal());
-            foreach (var hayvanKayit in hayvanKayitManager.GetAll())
+            var result = hayvanKayitManager.GetAll();
+            if (result.Success==true)
             {
-                Console.WriteLine(hayvanKayit.Ad);
+                foreach (var hayvanKayit in result.Data)
+                {
+                    Console.WriteLine(hayvanKayit.Ad);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+            
         }
     }
 }

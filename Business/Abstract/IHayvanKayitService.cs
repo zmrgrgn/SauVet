@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,9 @@ namespace Business.Abstract
 {
     public interface IHayvanKayitService
     {
-        List<HayvanKayit> GetAll();
-        List<HayvanKayit> GetAllVatandasId(int VatandasId);
+        IDataResult<List<HayvanKayit>> GetAll();
+        IDataResult<List<HayvanKayit>> GetAllVatandasId(int VatandasId);
+        IResult Add(HayvanKayit hayvanKayit);
+        IDataResult<HayvanKayit> GetById(string hayvanKayitId);
     }
 }
