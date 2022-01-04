@@ -1,8 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +22,9 @@ namespace Business.Concrete
         {
             _hayvanKayitDal = hayvanKayitDal;
         }
-
+        [ValidationAspect(typeof(HayvanKayitValidator))]
         public IResult Add(HayvanKayit hayvanKayit)
         {
-            if (hayvanKayit.Ad.Length<2)
-            {
-                return new ErrorResult(Messages.HayvanNameInvalid);
-            }
             _hayvanKayitDal.Add(hayvanKayit);
 
             return new SuccessResult(Messages.HayvanAdded);
