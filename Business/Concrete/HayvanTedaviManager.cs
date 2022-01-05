@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -18,9 +19,9 @@ namespace Business.Concrete
             _hayvanTedaviDal = hayvanTedaviDal;
         }
 
-        public List<HayvanTedavi> GetAll()
+        public IDataResult<List<HayvanTedavi>> GetAll()
         {
-            return _hayvanTedaviDal.GetAll();
+            return new SuccessDataResult<List<HayvanTedavi>>(_hayvanTedaviDal.GetAll());
 
             //public Category GetById(int categoryId)
             //{

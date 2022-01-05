@@ -20,6 +20,8 @@ namespace Business.DependencyResolvers.Autofac
         {
             builder.RegisterType<HayvanKayitManager>().As<IHayvanKayitService>().SingleInstance();
             builder.RegisterType<EfHayvanKayitDal>().As<IHayvanKayitDal>().SingleInstance();
+            builder.RegisterType<HayvanTedaviManager>().As<IHayvanTedaviService>().SingleInstance();
+            builder.RegisterType<EfHayvanTedaviDal>().As<IHayvanTedaviDal>().SingleInstance();
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

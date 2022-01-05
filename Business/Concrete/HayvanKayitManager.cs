@@ -3,6 +3,7 @@ using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -18,17 +19,26 @@ namespace Business.Concrete
     public class HayvanKayitManager : IHayvanKayitService
     {
         IHayvanKayitDal _hayvanKayitDal;
-        public HayvanKayitManager(IHayvanKayitDal hayvanKayitDal)
+        IHayvanTedaviService _hayvanTedaviService;
+        public HayvanKayitManager(IHayvanKayitDal hayvanKayitDal, IHayvanTedaviService hayvanTedaviService)
         {
             _hayvanKayitDal = hayvanKayitDal;
+            _hayvanTedaviService = hayvanTedaviService;
         }
         [ValidationAspect(typeof(HayvanKayitValidator))]
         public IResult Add(HayvanKayit hayvanKayit)
         {
-            //if(CheckIfHayvanKayitCountOfKafesCorrect(hayvanKayit.KafesNo).Success)
+            IResult result=BusinessRules.Run(CheckIfHayvanKayitIdExists(hayvanKayit.Id));
+            //CheckIfHayvanKayitCountOfKafesCorrect(hayvanKayit.KafesNo)
+            if (result!=null)
+            {
+                return result;
+            }
             _hayvanKayitDal.Add(hayvanKayit);
 
             return new SuccessResult(Messages.HayvanAdded);
+            //CheckIfHayvanKayitCountOfKafesCorrect(hayvanKayit.KafesNo)
+
         }
 
         public IDataResult<List<HayvanKayit>> GetAll()
@@ -64,5 +74,14 @@ namespace Business.Concrete
         //    }
         //    return new SuccessResult();
         //}
+        private IResult CheckIfHayvanKayitIdExists(string id)
+        {
+            var result = _hayvanKayitDal.GetAll(h => h.Id == id).Any();
+            if (result)
+            {
+                return new ErrorResult(Messages.HayvanKayitIdAlreadyExists);
+            }
+            return new SuccessResult();
+        }
     }
 }

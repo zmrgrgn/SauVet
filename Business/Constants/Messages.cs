@@ -13,7 +13,7 @@ namespace Business.Constants
         public static string HayvanNameInvalid = "Hayvan Adı Geçersiz";
         public static string HayvanListed = "Hayvanlar listelendi";
         public static string MaintenanceTime = "Bakım saati";
-
         public static string OfKafesError = "En fazla 10 hayvan eklenebilir";
+        public static string HayvanKayitIdAlreadyExists = "Id numaraları aynı olamaz";
     }
 }

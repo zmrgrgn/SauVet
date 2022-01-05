@@ -13,7 +13,7 @@ namespace ConsoleUI
 
         private static void HayvanKayitTest()
         {
-            HayvanKayitManager hayvanKayitManager = new HayvanKayitManager(new EfHayvanKayitDal());
+            HayvanKayitManager hayvanKayitManager = new HayvanKayitManager(new EfHayvanKayitDal(),new HayvanTedaviManager(new EfHayvanTedaviDal()));
             var result = hayvanKayitManager.GetAll();
             if (result.Success==true)
             {
