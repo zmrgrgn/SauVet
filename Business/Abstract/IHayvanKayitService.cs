@@ -13,6 +13,7 @@ namespace Business.Abstract
         IDataResult<List<HayvanKayit>> GetAll();
         IDataResult<List<HayvanKayit>> GetAllVatandasId(int VatandasId);
         IResult Add(HayvanKayit hayvanKayit);
+        IResult Update(HayvanKayit hayvanKayit);
         IDataResult<HayvanKayit> GetById(string hayvanKayitId);
     }
 }

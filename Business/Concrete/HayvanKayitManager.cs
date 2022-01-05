@@ -25,6 +25,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(HayvanKayitValidator))]
         public IResult Add(HayvanKayit hayvanKayit)
         {
+            //if(CheckIfHayvanKayitCountOfKafesCorrect(hayvanKayit.KafesNo).Success)
             _hayvanKayitDal.Add(hayvanKayit);
 
             return new SuccessResult(Messages.HayvanAdded);
@@ -48,5 +49,20 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<HayvanKayit>(_hayvanKayitDal.Get(h=>h.Id==hayvanKayitId));
         }
+
+        public IResult Update(HayvanKayit hayvanKayit)
+        {
+            
+            throw new NotImplementedException();
+        }
+        //private IResult CheckIfHayvanKayitCountOfKafesCorrect(int kafesNo)
+        //{
+        //    var result = _hayvanKayitDal.GetAll(h => h.KafesNo==kafesNo).Count;
+        //    if (result >= 10)
+        //    {
+        //        return new ErrorResult(Messages.OfKafesError);
+        //    }
+        //    return new SuccessResult();
+        //}
     }
 }
