@@ -44,7 +44,7 @@ namespace Business.Concrete
             }
             _hekimDal.Update(hekim);
 
-            return new SuccessResult(Messages.HekimAdded);
+            return new SuccessResult(Messages.HekimUpdated);
         }
 
         public IResult Delete(Hekim hekim)

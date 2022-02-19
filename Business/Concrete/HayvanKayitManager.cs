@@ -49,7 +49,7 @@ namespace Business.Concrete
             }
             _hayvanKayitDal.Update(hayvanKayit);
 
-            return new SuccessResult(Messages.HayvanKayitAdded);
+            return new SuccessResult(Messages.HayvanKayiUpdated);
         }
         public IResult Delete(HayvanKayit hayvanKayit)
         {

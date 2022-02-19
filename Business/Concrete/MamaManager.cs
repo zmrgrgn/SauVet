@@ -44,7 +44,7 @@ namespace Business.Concrete
             }
             _mamaDal.Update(mama);
 
-            return new SuccessResult(Messages.MamaAdded);
+            return new SuccessResult(Messages.MamaUpdated);
         }
 
         public IResult Delete(Mama mama)

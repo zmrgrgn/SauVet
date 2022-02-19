@@ -44,7 +44,7 @@ namespace Business.Concrete
             }
             _hayvanSahiplendirmeDal.Update(hayvanSahiplendirme);
 
-            return new SuccessResult(Messages.HayvanSahiplendirmeAdded);
+            return new SuccessResult(Messages.HayvanSahiplendirmeUpdated);
         }
         public IResult Delete(HayvanSahiplendirme hayvanSahiplendirme)
         {

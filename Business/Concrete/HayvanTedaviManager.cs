@@ -44,7 +44,7 @@ namespace Business.Concrete
             }
             _hayvanTedaviDal.Update(hayvanTedavi);
 
-            return new SuccessResult(Messages.HayvanTedaviAdded);
+            return new SuccessResult(Messages.HayvanTedaviUpdated);
         }
         public IResult Delete(HayvanTedavi hayvanTedavi)
         {

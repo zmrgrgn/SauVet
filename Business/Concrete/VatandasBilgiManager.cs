@@ -44,7 +44,7 @@ namespace Business.Concrete
             }
             _vatandasBilgiDal.Update(vatandasBilgi);
 
-            return new SuccessResult(Messages.VatandasBilgiAdded);
+            return new SuccessResult(Messages.VatandasBilgiUpdated);
         }
         public IResult Delete(VatandasBilgi vatandasBilgi)
         {

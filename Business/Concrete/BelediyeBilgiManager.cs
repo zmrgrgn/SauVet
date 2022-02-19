@@ -43,7 +43,7 @@ namespace Business.Concrete
             }
             _belediyeBilgiDal.Update(belediyeBilgi);
 
-            return new SuccessResult(Messages.BelediyeBilgiAdded);
+            return new SuccessResult(Messages.BelediyeBilgiUpdated);
         }
 
         public IDataResult<List<BelediyeBilgi>> GetAll()

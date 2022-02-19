@@ -25,6 +25,14 @@ namespace Business.Constants
         public static string MamaListed = "Mamalar listelendi";
         public static string VatandasBilgiListed = "Vatandaşlar listelendi";
 
+        public static string HayvanKayiUpdated = "Hayvan kayıt güncellendi";
+        public static string BelediyeBilgiUpdated = "Belediye güncellendi";
+        public static string HayvanSahiplendirmeUpdated = "Hayvan sahiplendirme güncellendi";
+        public static string HayvanTedaviUpdated = "Hayvan tedavisi güncellendi";
+        public static string HekimUpdated = "Hekim güncellendi";
+        public static string MamaUpdated = "Mama güncellendi";
+        public static string VatandasBilgiUpdated = "Vatandaş güncellendi";
+
         public static string HayvanKayitDeleted = "Hayvan kayıt silindi";
         public static string BelediyeBilgiDeleted = "Belediye silindi";
         public static string HayvanSahiplendirmeDeleted = "Hayvan sahiplendirme silindi";
