@@ -36,18 +36,40 @@ namespace Business.Concrete
             }
             _hayvanKayitDal.Add(hayvanKayit);
 
-            return new SuccessResult(Messages.HayvanAdded);
+            return new SuccessResult(Messages.HayvanKayitAdded);
             //CheckIfHayvanKayitCountOfKafesCorrect(hayvanKayit.KafesNo)
 
+        }
+        public IResult Update(HayvanKayit hayvanKayit)
+        {
+            IResult result = BusinessRules.Run();
+            if (result != null)
+            {
+                return result;
+            }
+            _hayvanKayitDal.Update(hayvanKayit);
+
+            return new SuccessResult(Messages.HayvanKayitAdded);
+        }
+        public IResult Delete(HayvanKayit hayvanKayit)
+        {
+            IResult result = BusinessRules.Run();
+            if (result != null)
+            {
+                return result;
+            }
+            _hayvanKayitDal.Delete(hayvanKayit);
+
+            return new SuccessResult(Messages.HayvanKayitDeleted);
         }
 
         public IDataResult<List<HayvanKayit>> GetAll()
         {
-            if (DateTime.Now.Hour==15)
+            if (DateTime.Now.Hour==1)
             {
                 return new ErrorDataResult<List<HayvanKayit>>(Messages.MaintenanceTime);
             }
-            return new SuccessDataResult<List<HayvanKayit>>(_hayvanKayitDal.GetAll(),Messages.HayvanListed);
+            return new SuccessDataResult<List<HayvanKayit>>(_hayvanKayitDal.GetAll(),Messages.HayvanKayitListed);
         }
 
         public IDataResult<List<HayvanKayit>> GetAllVatandasId(int VatandasId)
@@ -60,11 +82,6 @@ namespace Business.Concrete
             return new SuccessDataResult<HayvanKayit>(_hayvanKayitDal.Get(h=>h.Id==hayvanKayitId));
         }
 
-        public IResult Update(HayvanKayit hayvanKayit)
-        {
-            
-            throw new NotImplementedException();
-        }
         //private IResult CheckIfHayvanKayitCountOfKafesCorrect(int kafesNo)
         //{
         //    var result = _hayvanKayitDal.GetAll(h => h.KafesNo==kafesNo).Count;
@@ -79,7 +96,7 @@ namespace Business.Concrete
             var result = _hayvanKayitDal.GetAll(h => h.Id == id).Any();
             if (result)
             {
-                return new ErrorResult(Messages.HayvanKayitIdAlreadyExists);
+                return new ErrorResult(Messages.IdAlreadyExists);
             }
             return new SuccessResult();
         }

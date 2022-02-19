@@ -10,10 +10,10 @@ namespace Entities.Concrete
     public class Mama: IEntity
     {
         public int Id { get; set; }
-        public DateTime Tarih { get; set; }
+        public string Tarih { get; set; }
         public string Ad { get; set; }
         public string MalzemeTur { get; set; }
-        public int Sayi { get; set; }
+        public int Miktar { get; set; }
         public string Birim { get; set; }
     }
 }

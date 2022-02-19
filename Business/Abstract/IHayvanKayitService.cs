@@ -14,6 +14,7 @@ namespace Business.Abstract
         IDataResult<List<HayvanKayit>> GetAllVatandasId(int VatandasId);
         IResult Add(HayvanKayit hayvanKayit);
         IResult Update(HayvanKayit hayvanKayit);
+        IResult Delete(HayvanKayit hayvanKayit);
         IDataResult<HayvanKayit> GetById(string hayvanKayitId);
     }
 }

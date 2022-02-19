@@ -54,5 +54,25 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+        [HttpPut("update")]
+        public IActionResult Update(HayvanKayit hayvanKayit)
+        {
+            var result = _hayvanKayitService.Update(hayvanKayit);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpDelete("delete")]
+        public IActionResult Delete(HayvanKayit hayvanKayit)
+        {
+            var result = _hayvanKayitService.Delete(hayvanKayit);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

@@ -14,10 +14,10 @@ namespace Entities.Concrete
         public int HekimId { get; set; }
         public string TedaviBaslik { get; set; }
         public string TedaviDetay { get; set; }
-        public DateTime TedaviTarih { get; set; }
+        public string TedaviTarih { get; set; }
         public string Bulgular { get; set; }
         public string Notlar { get; set; }
-        public bool OlduMu { get; set; }
+        public string OlduMu { get; set; }
         public string OlumNedeni { get; set; }
     }
 }

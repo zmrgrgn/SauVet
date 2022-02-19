@@ -11,9 +11,9 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public string HayvanId { get; set; }
-        public DateTime Tarih { get; set; }
         public int VatandasId { get; set; }
         public int BelediyeId { get; set; }
+        public string Tarih { get; set; }
 
     }
 }

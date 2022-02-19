@@ -13,8 +13,6 @@ namespace Entities.Concrete
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string TelNo { get; set; }
-        public string KullaniciAdi { get; set; }
-        public string Sifre { get; set; }
         public string Gorev { get; set; }
         public string TcNo { get; set; }
         public string SicilNo { get; set; }

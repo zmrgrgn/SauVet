@@ -11,5 +11,8 @@ namespace Business.Abstract
     public interface IHayvanTedaviService
     {
         IDataResult<List<HayvanTedavi>> GetAll();
+        IResult Add(HayvanTedavi hayvanTedavi);
+        IResult Update(HayvanTedavi hayvanTedavi);
+        IResult Delete(HayvanTedavi hayvanTedavi);
     }
 }
