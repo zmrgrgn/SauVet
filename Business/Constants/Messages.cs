@@ -45,5 +45,13 @@ namespace Business.Constants
         public static string MaintenanceTime = "Bakım saati";
         public static string OfKafesError = "En fazla 10 hayvan eklenebilir";
         public static string IdAlreadyExists = "Id numaraları aynı olamaz";
+        public static string AuthorizationDenied = "Yetkiniz yok.";
+
+        public static string AccessTokenCreated = "Token oluşturuldu.";
+        public static string UserAlreadyExists = "Kullanıcı mevcut.";
+        public static string SuccessfulLogin = "Başarılı giriş.";
+        public static string PasswordError = "Parola hatası.";
+        public static string UserNotFound = "Kullanıcı bulunamadı.";
+        public static string UserRegistered = "Kayıt oldu.";
     }
 }

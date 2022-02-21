@@ -12,4 +12,3 @@ namespace Core.Utilities.Security.JWT
         AccessToken CreateToken(User user, List<OperationClaim> operationClaims);
     }
 }
-//02:05'de kaldın

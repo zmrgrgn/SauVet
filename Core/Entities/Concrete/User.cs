@@ -13,7 +13,6 @@ namespace Core.Entities.Concrete
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public bool Status { get; set; }
-        public int HekimId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
