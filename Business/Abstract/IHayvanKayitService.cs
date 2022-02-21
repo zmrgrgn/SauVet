@@ -16,5 +16,6 @@ namespace Business.Abstract
         IResult Update(HayvanKayit hayvanKayit);
         IResult Delete(HayvanKayit hayvanKayit);
         IDataResult<HayvanKayit> GetById(string hayvanKayitId);
+        IResult AddTransactionalTest(HayvanKayit hayvanKayit);
     }
 }

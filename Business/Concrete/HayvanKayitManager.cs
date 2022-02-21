@@ -2,6 +2,7 @@
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Business;
@@ -28,6 +29,7 @@ namespace Business.Concrete
         }
         [SecuredOperation("hayvankayit.add,admin")]
         [ValidationAspect(typeof(HayvanKayitValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(HayvanKayit hayvanKayit)
         {
             IResult result=BusinessRules.Run(CheckIfHayvanKayitIdExists(hayvanKayit.Id));
@@ -42,6 +44,7 @@ namespace Business.Concrete
             //CheckIfHayvanKayitCountOfKafesCorrect(hayvanKayit.KafesNo)
 
         }
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Update(HayvanKayit hayvanKayit)
         {
             IResult result = BusinessRules.Run();
@@ -64,7 +67,7 @@ namespace Business.Concrete
 
             return new SuccessResult(Messages.HayvanKayitDeleted);
         }
-
+        [CacheAspect]
         public IDataResult<List<HayvanKayit>> GetAll()
         {
             if (DateTime.Now.Hour==1)
@@ -79,6 +82,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<HayvanKayit>>(_hayvanKayitDal.GetAll(h=>h.VatandasId==VatandasId));
         }//vatandaş idsini girince o kişiyi bulduran kısım
 
+        [CacheAspect]
         public IDataResult<HayvanKayit> GetById(string hayvanKayitId)
         {
             return new SuccessDataResult<HayvanKayit>(_hayvanKayitDal.Get(h=>h.Id==hayvanKayitId));
@@ -101,6 +105,11 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.IdAlreadyExists);
             }
             return new SuccessResult();
+        }
+
+        public IResult AddTransactionalTest(HayvanKayit hayvanKayit)
+        {
+            throw new NotImplementedException();
         }
     }
 }
