@@ -67,10 +67,11 @@ namespace Business.Concrete
 
             return new SuccessResult(Messages.HayvanKayitDeleted);
         }
+        [SecuredOperation("hayvankayit.add,admin")]
         [CacheAspect]
         public IDataResult<List<HayvanKayit>> GetAll()
         {
-            if (DateTime.Now.Hour==1)
+            if (DateTime.Now.Hour==6)
             {
                 return new ErrorDataResult<List<HayvanKayit>>(Messages.MaintenanceTime);
             }
