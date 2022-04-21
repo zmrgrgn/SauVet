@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpPut("update")]
+        [HttpPost("update")]
         public IActionResult Update(HayvanSahiplendirme hayvanSahiplendirme)
         {
             var result = _hayvanSahiplendirmeService.Update(hayvanSahiplendirme);
@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpDelete("delete")]
+        [HttpPost("delete")]
         public IActionResult Delete(HayvanSahiplendirme hayvanSahiplendirme)
         {
             var result = _hayvanSahiplendirmeService.Delete(hayvanSahiplendirme);

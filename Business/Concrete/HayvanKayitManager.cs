@@ -27,7 +27,6 @@ namespace Business.Concrete
             _hayvanKayitDal = hayvanKayitDal;
             _hayvanTedaviService = hayvanTedaviService;
         }
-        [SecuredOperation("hayvankayit.add,admin")]
         [ValidationAspect(typeof(HayvanKayitValidator))]
         [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(HayvanKayit hayvanKayit)

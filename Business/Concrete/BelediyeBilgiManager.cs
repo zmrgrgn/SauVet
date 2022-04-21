@@ -67,8 +67,8 @@ namespace Business.Concrete
             {
                 return result;
             }
-            _belediyeBilgiDal.Delete(belediyeBilgi);
-
+            var deletedBelediyeBilgi = _belediyeBilgiDal.Get(b => b.Id == belediyeBilgi.Id);
+            _belediyeBilgiDal.Delete(deletedBelediyeBilgi);
             return new SuccessResult(Messages.BelediyeBilgiDeleted);
         }
     }

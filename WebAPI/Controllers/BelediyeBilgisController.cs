@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpPut("update")]
+        [HttpPost("update")]
         public IActionResult Update(BelediyeBilgi belediyeBilgi)
         {
             var result = _belediyeBilgiService.Update(belediyeBilgi);
@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
-        [HttpDelete("delete")]
+        [HttpPost("delete")]
         public IActionResult Delete(BelediyeBilgi belediyeBilgi)
         {
             var result = _belediyeBilgiService.Delete(belediyeBilgi);
