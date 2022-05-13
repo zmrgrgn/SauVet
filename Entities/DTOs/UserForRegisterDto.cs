@@ -13,5 +13,9 @@ namespace Entities.DTOs
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string TelNo { get; set; }
+        public string Gorev { get; set; }
+        public string TcNo { get; set; }
+        public string SicilNo { get; set; }
     }
 }

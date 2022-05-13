@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfHekimDal : EfEntityRepositoryBase<Hekim, SauVetDbContext>, IHekimDal
+    public class EfKafesNoDal: EfEntityRepositoryBase<KafesNo, SauVetDbContext>, IKafesNoDal
     {
     }
 }

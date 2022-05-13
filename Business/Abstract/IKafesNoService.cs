@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IHekimService
+    public interface IKafesNoService
     {
-        IDataResult<List<Hekim>> GetAll();
-        IResult Add(Hekim hekim);
-        IResult Update(Hekim hekim);
-        IResult Delete(Hekim hekim);
+        IDataResult<List<KafesNo>> GetAll();
+        IResult Add(KafesNo kafesNo);
+        IResult Update(KafesNo kafesNo);
+        IResult Delete(KafesNo kafesNo);
     }
 }

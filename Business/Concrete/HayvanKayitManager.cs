@@ -66,7 +66,7 @@ namespace Business.Concrete
 
             return new SuccessResult(Messages.HayvanKayitDeleted);
         }
-        [SecuredOperation("hayvankayit.add,admin")]
+        //[SecuredOperation("hayvankayit.add,admin")]
         [CacheAspect]
         public IDataResult<List<HayvanKayit>> GetAll()
         {

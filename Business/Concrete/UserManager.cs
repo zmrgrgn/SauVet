@@ -1,5 +1,8 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Entities.Concrete;
+using Core.Utilities.Business;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
@@ -31,6 +34,40 @@ namespace Business.Concrete
         public User GetByMail(string email)
         {
             return _userDal.Get(u => u.Email == email);
+        }
+        public IResult Update(User user)
+        {
+            var rulesResult = BusinessRules.Run(CheckIfUserIdExist(user.Id)
+                , CheckIfEmailAvailable(user.Email));
+            if (rulesResult != null)
+            {
+                return rulesResult;
+            }
+
+            _userDal.Update(user);
+            return new SuccessResult(Messages.UserUpdated);
+        }
+        private IResult CheckIfUserIdExist(int userId)
+        {
+            var result = _userDal.GetAll(u => u.Id == userId).Any();
+            if (!result)
+            {
+                return new ErrorResult(Messages.UserNotExist);
+            }
+            return new SuccessResult();
+        }
+        private IResult CheckIfEmailAvailable(string userEmail)
+        {
+            var result = BaseCheckIfEmailExist(userEmail);
+            if (!result)
+            {
+                return new ErrorResult(Messages.UserEmailNotAvailable);
+            }
+            return new SuccessResult();
+        }
+        private bool BaseCheckIfEmailExist(string userEmail)
+        {
+            return _userDal.GetAll(u => u.Email == userEmail).Any();
         }
     }
 }

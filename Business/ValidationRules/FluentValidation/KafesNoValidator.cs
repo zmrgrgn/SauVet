@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class HekimValidator : AbstractValidator<Hekim>
+    public class KafesNoValidator:AbstractValidator<KafesNo>
     {
-        public HekimValidator()
+        public KafesNoValidator()
         {
-            RuleFor(h => h.Ad).MinimumLength(2);
+            RuleFor(k => k.KafesAdi).MinimumLength(2);
         }
     }
 }

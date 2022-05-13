@@ -12,11 +12,11 @@ namespace Entities.Concrete
         public string Id { get; set; }
         public int? VatandasId { get; set; }
         public int? BelediyeId { get; set; }
-        public string KafesNo { get; set; }
+        public int KafesNo { get; set; }
         public string CipNo { get; set; }
         public string KulakNo { get; set; }
         public string Ad { get; set; }
-        public string HayvanTur { get; set; }
+        public int HayvanTur { get; set; }
         public string Irk { get; set; }
         public string Yas { get; set; }
         public string Cinsiyet { get; set; }
@@ -25,7 +25,6 @@ namespace Entities.Concrete
         public string GeldigiTarih { get; set; }
         public string GeldigiAdres { get; set; }
         public string Anamnez { get; set; }
-        public string Fotograf { get; set; }
 
 
     }

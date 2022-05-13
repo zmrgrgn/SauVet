@@ -19,11 +19,12 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<HayvanKayit> HayvanKayit { get; set; }
         public DbSet<HayvanSahiplendirme> HayvanSahiplendirme { get; set; }
         public DbSet<HayvanTedavi> HayvanTedavi { get; set; }
-        public DbSet<Hekim> Hekim { get; set; }
         public DbSet<Mama> Mama { get; set; }
         public DbSet<VatandasBilgi> VatandasBilgi { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<HayvanTur> HayvanTur { get; set; }
+        public DbSet<KafesNo> KafesNo { get; set; }
     }
 }

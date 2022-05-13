@@ -11,7 +11,6 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public string HayvanId { get; set; }
-        public int HekimId { get; set; }
         public string TedaviBaslik { get; set; }
         public string TedaviDetay { get; set; }
         public string TedaviTarih { get; set; }

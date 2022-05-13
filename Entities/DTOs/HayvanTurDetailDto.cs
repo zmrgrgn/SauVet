@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
-    public class HekimDetailDto : IDto
+    public class HayvanTurDetailDto:IDto
     {
     }
 }

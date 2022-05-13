@@ -10,19 +10,18 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HekimsController : ControllerBase
+    public class KafesNosController : ControllerBase
     {
-        IHekimService _hekimService;
-
-        public HekimsController(IHekimService hekimService)
+        IKafesNoService _kafesNoService;
+        public KafesNosController(IKafesNoService kafesNoService)
         {
-            _hekimService = hekimService;
+            _kafesNoService = kafesNoService;
         }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
 
-            var result = _hekimService.GetAll();
+            var result = _kafesNoService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -30,9 +29,9 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPost("add")]
-        public IActionResult Add(Hekim hekim)
+        public IActionResult Add(KafesNo kafesNo)
         {
-            var result = _hekimService.Add(hekim);
+            var result = _kafesNoService.Add(kafesNo);
             if (result.Success)
             {
                 return Ok(result);
@@ -40,9 +39,9 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPost("update")]
-        public IActionResult Update(Hekim hekim)
+        public IActionResult Update(KafesNo kafesNo)
         {
-            var result = _hekimService.Update(hekim);
+            var result = _kafesNoService.Update(kafesNo);
             if (result.Success)
             {
                 return Ok(result);
@@ -50,9 +49,9 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPost("delete")]
-        public IActionResult Delete(Hekim hekim)
+        public IActionResult Delete(KafesNo kafesNo)
         {
-            var result = _hekimService.Delete(hekim);
+            var result = _kafesNoService.Delete(kafesNo);
             if (result.Success)
             {
                 return Ok(result);

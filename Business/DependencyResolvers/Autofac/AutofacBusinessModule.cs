@@ -27,14 +27,16 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<EfBelediyeBilgiDal>().As<IBelediyeBilgiDal>().SingleInstance();
             builder.RegisterType<HayvanSahiplendirmeManager>().As<IHayvanSahiplendirmeService>().SingleInstance();
             builder.RegisterType<EfHayvanSahiplendirmeDal>().As<IHayvanSahiplendirmeDal>().SingleInstance();
-            builder.RegisterType<HekimManager>().As<IHekimService>().SingleInstance();
-            builder.RegisterType<EfHekimDal>().As<IHekimDal>().SingleInstance();
             builder.RegisterType<MamaManager>().As<IMamaService>().SingleInstance();
             builder.RegisterType<EfMamaDal>().As<IMamaDal>().SingleInstance();
             builder.RegisterType<VatandasBilgiManager>().As<IVatandasBilgiService>().SingleInstance();
             builder.RegisterType<EfVatandasBilgiDal>().As<IVatandasBilgiDal>().SingleInstance();
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EfUserDal>().As<IUserDal>();
+            builder.RegisterType<HayvanTurManager>().As<IHayvanTurService>().SingleInstance();
+            builder.RegisterType<EfHayvanTurDal>().As<IHayvanTurDal>().SingleInstance();
+            builder.RegisterType<KafesNoManager>().As<IKafesNoService>().SingleInstance();
+            builder.RegisterType<EfKafesNoDal>().As<IKafesNoDal>().SingleInstance();
 
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
